@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng deploy --base-href=/macho/"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@angular/cli": "~14.0.1",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
+    "angular-cli-ghpages": "^1.0.3",
     "autoprefixer": "^10.4.8",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
