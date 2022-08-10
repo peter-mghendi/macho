@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PresidentialResults} from "../core/models";
 import {NationService} from "../core/services/nation.service";
+import {retry, share, switchMap, timer} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nation.getPresidentialResults().subscribe((value) => this.data = value);
+    timer(1, 2 * 60 * 1000)
+      .pipe(
+        switchMap(() => this.nation.getPresidentialResults()),
+        retry(),
+        share()
+      )
+      .subscribe((value) => this.data = value);
   }
 }
