@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from "@angular/common/http";
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavMenuComponent,
   ],
   imports: [
     BrowserModule,
